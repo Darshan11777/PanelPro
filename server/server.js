@@ -33,12 +33,13 @@ app.use(express.json())
 const cors = require('cors');
 const servicesRouter=require('./router/service-router')
 const adminRouter=require('./router/admin-router')
-const corsOptions = {
-    origin: "http://localhost:5173",
-   methods: "GET, POST, PUT, DELETE, PATCH, HEAD",
-    credentials: true,
-}
-app.use(cors(corsOptions))
+// const corsOptions = {
+//     origin: "http://localhost:5173",
+//    methods: "GET, POST, PUT, DELETE, PATCH, HEAD",
+//     credentials: true,
+// }
+// app.use(cors(corsOptions))
+app.use(cors())
 const connectdb=require('./utils/db')
 const run=require('./utils/cloud')
 
