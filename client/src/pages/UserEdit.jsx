@@ -9,12 +9,12 @@ export default function UserEdit() {
 const {id}=useParams()
 const [userData, setData] = React.useState([]);
 
-const {token,notify}=useAuth()
+const {token,notify,base_url}=useAuth()
 
     const getUser=async(id)=>{
         
         try {
-            const responce = await fetch(`http://localhost:3000/admin/user/${id}`, {
+            const responce = await fetch(`${base_url}admin/user/${id}`, {
               method: "Get",
               headers: {
                 "Content-Type": "application/json",
@@ -47,7 +47,7 @@ const {token,notify}=useAuth()
         }
         
         try {
-          const responce = await fetch(`http://localhost:3000/admin/user/edit/${id}`, {
+          const responce = await fetch(`${base_url}admin/user/edit/${id}`, {
             method: "PATCH",
             headers: {
               "Content-Type": "application/json",

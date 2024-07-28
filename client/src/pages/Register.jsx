@@ -15,7 +15,7 @@ export default function Register() {
 
     }
   )
-  const {notify,notifyW,storeTokenInLS}=useAuth()
+  const {notify,notifyW,storeTokenInLS,base_url}=useAuth()
 
  console.log( "formData",formData);
   console.log( "formData",formData);
@@ -72,7 +72,7 @@ console.log( "form",formData);
 
 
     try {
-      const response = await fetch("http://localhost:3000/user/register", {
+      const response = await fetch( `${base_url}user/register`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

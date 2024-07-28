@@ -7,7 +7,7 @@ import avtar  from '../assets/—Pngtree—user profile avatar_13369988.png'
 export default function UserData() {
   const navigate=useNavigate()
     const [data, setData] = React.useState([]);
-    const {token,notify,notifyW}=useAuth()
+    const {token,notify,notifyW,base_url}=useAuth()
 
     if(!token){
  notifyW('please login to see the data')
@@ -19,7 +19,7 @@ navigate('/', { replace: true })
         e.preventDefault()
         console.log( "id user deleted",id);
         try {
-            const responce = await fetch(`http://localhost:3000/admin/user/delete/${id}`, {
+            const responce = await fetch(`${base_url}admin/user/delete/${id}`, {
               method: "Delete",
               headers: {
                 "Content-Type": "application/json",
@@ -55,7 +55,7 @@ navigate('/', { replace: true })
     const adminUserData=async()=>{
     if(token){
     try {
-        const responce = await fetch("http://localhost:3000/admin/user", {
+        const responce = await fetch(`${base_url}admin/user`, {
           method: "Get",
           headers: {
             "Content-Type": "application/json",

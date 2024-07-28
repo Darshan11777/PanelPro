@@ -5,7 +5,7 @@ import MyForm from "../components/Form2";
 // import { TEInput, TERipple } from "tw-elements-react";
 
 export default function Contact(){
-  let {userdata,notify,notifyW}=useAuth()
+  let {userdata,notify,notifyW,base_url}=useAuth()
     console.log( "userdata",userdata);
 
     
@@ -55,7 +55,7 @@ async function handleSubmit(event) {
   } 
   
     try {
-        const responce = await fetch("http://localhost:3000/form/contact", {
+        const responce = await fetch(`${base_url}form/contact`, {
           method: "POST",
           headers: {
             "Content-Type": "application/json",

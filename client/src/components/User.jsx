@@ -4,13 +4,13 @@ import { useAuth } from '../../store/Auth';
 export default function AdminPanel() {
 
     const [data, setData] = React.useState([]);
-    const {token}=useAuth()
+    const {token,base_url}=useAuth()
     console.log( "token",data);
 
     const adminUserData=async()=>{
     if(token){
     try {
-        const responce = await fetch("http://localhost:3000/admin/user", {
+        const responce = await fetch(`${base_url}admin/user`, {
           method: "Get",
           headers: {
             "Content-Type": "application/json",

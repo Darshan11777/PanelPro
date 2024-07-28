@@ -34,8 +34,8 @@ export default function Login() {
   }
   console.log("formData", formData);
 
-  const { storeTokenInLS,notifyW } = useAuth()
-  console.log("useAuth()", useAuth());
+  const { storeTokenInLS,notifyW ,base_url} = useAuth()
+  
 
   async function handleSubmit(event) {
     event.preventDefault()
@@ -43,7 +43,7 @@ export default function Login() {
     // submitToApi(formData)
     console.log(formData)
     try {
-      const responce = await fetch("http://localhost:3000/user/login", {
+      const responce = await fetch( `${base_url}user/login`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

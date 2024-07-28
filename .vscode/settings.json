@@ -1,3 +1,4 @@
 {
-    "editor.quickSuggestionsDelay": 0
+    "editor.quickSuggestionsDelay": 0,
+    "codium.codeCompletion.enable": false
 }
