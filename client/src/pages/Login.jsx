@@ -34,7 +34,7 @@ export default function Login() {
   }
   console.log("formData", formData);
 
-  const { storeTokenInLS } = useAuth()
+  const { storeTokenInLS,notifyW } = useAuth()
   console.log("useAuth()", useAuth());
 
   async function handleSubmit(event) {
@@ -60,6 +60,7 @@ export default function Login() {
 
       } else {
         console.log("error inside response ", "error");
+        notifyW('incorrect userName or password')
       }
     } catch (error) {
       console.log("error", error);
