@@ -35,7 +35,7 @@ export default function NavbarMobile() {
               Home
             </Link>
           </li>
-          {/* <li className="h-10 shadow-sm flex justify-center items-center border-[1px] border-black">
+          <li className="h-10 shadow-sm flex justify-center items-center border-[1px] border-black">
             <Link
                     to="/about"
                    className="w-full text-center  "
@@ -43,7 +43,7 @@ export default function NavbarMobile() {
                   >
                     About
                   </Link>
-            </li> */}
+            </li>
           <li className="h-10 shadow-sm flex justify-center items-center border-[1px] border-black">
             <Link to="/contact" className="w-full text-center  ">
               Contact

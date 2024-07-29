@@ -5,8 +5,21 @@ import Count from "../components/Count";
 import { Link, useNavigate } from "react-router-dom";
 import { useAuth } from "../../store/Auth";
 export default function Home() {
+
+  const { token, notifyW ,userdata} = useAuth();
+// const [loading, setLoading] = React.useState(false);
+
   const navigate = useNavigate();
-  const { token, notifyW } = useAuth();
+// if(token){
+// if(!userdata){
+// !loading && setLoading(true)
+// }else{
+//  loading && setLoading(false)
+// }
+
+// }
+// if(loading) {return(<>loading....</>)}
+
   const adminPanel = () => {
     if (!token) {
       notifyW("please login as admin first");
@@ -19,7 +32,7 @@ export default function Home() {
       {/* home 1 */}
       <div className=" wrapper  sm:pt-20 sm:pb-4">
         <div className=" container2 ">
-          <div className="grid grid-cols-2 sm:flex sm:flex-wrap sm:flex-col-reverse sm:mt-[1rem] mt-[2rem] gap-[10rem] lg:gap-[4rem] ">
+          <div className="grid grid-cols-2 sm:flex sm:flex-wrap sm:flex-col-reverse sm:mt-[1rem] mt-[2rem] gap-[4rem] md:gap-[4rem] ">
             <div className=" space-y-4  ">
               <p className="font-small">We are the World Best IT Company</p>
               <h1 className="text-5xl font-bold text-blue-500">
@@ -47,7 +60,7 @@ export default function Home() {
             <div className="h-[100%] mt-[-1rem]">
               <img
                 src={img}
-                className="h-[85%] sm:h-full sm:w-full rounded-lg pt-1"
+                className="h-[85%] sm:h-full sm:w-full rounded-lg pt-1 object-cover"
                 alt=""
               />
             </div>
@@ -56,7 +69,7 @@ export default function Home() {
       </div>
       <Count />
       {/* home 2 */}
-      <div className=" wrapper  pt-20 sm:pt-4 mt-16 sm:mt-4">
+      <div className=" wrapper  pt-5 sm:pt-4 mt-16 sm:mt-4">
         <div className=" container2 ">
           <div className="grid grid-cols-2 sm:flex sm:flex-wrap  sm:mt-[1rem] mt-[2rem] gap-[10rem] lg:gap-[4rem] ">
             <div className="h-[100%] mt-[-1rem] pt-3 w-full">

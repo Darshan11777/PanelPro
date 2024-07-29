@@ -47,16 +47,7 @@ export default function Navbar() {
                     Contact
                   </NavLink>
                 </li>
-                <li className="relative">
-                  <NavLink
-                    to="/info"
-                    className={({ isActive }) =>
-                      isActive ? " navLink  white after:w-[100%]" : "navLink"
-                    }
-                  >
-                    Info
-                  </NavLink>
-                </li>
+               
                 {isLoggedIn ? (
                   <li className="relative">
                     <NavLink
