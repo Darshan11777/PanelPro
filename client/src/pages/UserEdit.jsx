@@ -71,7 +71,7 @@ export default function UserEdit() {
 
   return (
     <div>
-      edit form
+      
       <EditForm userData={userData} userEdit={userEdit} />
     </div>
   );
