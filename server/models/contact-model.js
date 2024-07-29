@@ -1,4 +1,4 @@
-// determind sturcher of rechiving file 
+
 const {Schema,model,default:mongoose}=require('mongoose')
 
 const contactSchema=new Schema({
@@ -15,12 +15,6 @@ const contactSchema=new Schema({
         required:true
     }
 })
-
-// {
-//     "name":"darshan",
-//     "email":"jafsf",
-//     "message":"sufagf"
-// }
 
 // create model or collection
 const Contact=new model('Contact',contactSchema);

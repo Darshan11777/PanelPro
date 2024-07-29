@@ -10,6 +10,8 @@ const home = async (req, res) => {
         res.status(500).send({ massege: error });
     }
 }
+
+// register add new user
 const register = async (req, res, next) => {
     try {
         if (!req || !req.body) {
@@ -47,6 +49,7 @@ const register = async (req, res, next) => {
     }
 }
 
+// login give user there info and token
 const login = async (req, res, next) => {
     try {
         const { email, password } = req.body
@@ -80,6 +83,8 @@ const login = async (req, res, next) => {
         })
     }
 }
+
+
 const user=async(req,res)=>{
     try{
       const userData=req.user

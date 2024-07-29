@@ -5,23 +5,27 @@ import { toast } from "react-toastify";
 
 export const AuthContext = createContext();
 
-// wrap app in AppProvider
+//  AppProvider take children and wrap it in prowider
 export const AppProvider = ({ children }) => {
   const [token, setToken] = React.useState(localStorage.getItem("token"));
   const [userdata, setUserData] = React.useState({});
 
+  // storeTokenInLs take token and storeit in local storage
   const storeTokenInLS = (serverToken) => {
     setToken(serverToken);
     return localStorage.setItem("token", serverToken);
   };
   let isLoggedIn = !!token;
 
+  // logout remove token from localstorage and setToken to empty
   const logout = () => {
     setToken("");
     console.log("logOut succesfully");
     localStorage.removeItem("token");
     setUserData({});
   };
+
+  // notify make toast
   const notify = (str) => {
     toast.success(str);
   };
@@ -30,7 +34,7 @@ export const AppProvider = ({ children }) => {
   };
   const base_url = "https://panelpro.onrender.com/";
   
-
+// userData funtion login user if all data is correct
   const userData = async () => {
     try {
       const responce = await fetch(`${base_url}user/user`, {
@@ -76,8 +80,7 @@ export const AppProvider = ({ children }) => {
   );
 };
 
-// useAuth for destcure value
-// const  {storeTokenInLS } = useAuth()
+// useAuth  custom hook give access to AuthContext
 export const useAuth = () => {
   const authContextValue = useContext(AuthContext);
   if (!authContextValue) {

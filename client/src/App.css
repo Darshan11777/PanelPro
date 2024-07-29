@@ -41,8 +41,8 @@
   color: #888;
 } */
 
-@media  (max-width: 786px) {
+/* @media  (max-width: 786px) {
   .adminGrid{
     grid-template-columns: repeat(1, minmax(0, 1fr)) !important;
   }
-}
+} */

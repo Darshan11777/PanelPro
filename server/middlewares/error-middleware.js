@@ -1,4 +1,4 @@
-// when fuction pass next(err) server  send this message 
+// errorMiddleware handle error
 const errorMiddleware = (err, req, res, next) => {
     const statusCode = err.statusCode || 500
     const message=err.message || "BACKEND ERROR"

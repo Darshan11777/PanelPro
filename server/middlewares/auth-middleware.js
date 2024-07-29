@@ -3,6 +3,7 @@
 const jwt = require("jsonwebtoken");
 const User = require("../models/user-model");
 
+// authMiddleware is used for check  validity of token
 const authMiddleware = async (req, res, next) => {
 const token = req.header("Authorization");
 

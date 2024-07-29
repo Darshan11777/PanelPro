@@ -1,4 +1,6 @@
 const Contact=require('../models/contact-model')
+
+// contactForm add message to contact database
 const contactForm=async(req,res)=>{
 // 
     try {
